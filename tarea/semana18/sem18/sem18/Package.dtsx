@@ -1,0 +1,340 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/20/2022 7:37:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3VNO01T"
+  DTS:CreatorName="DESKTOP-3VNO01T\Admin"
+  DTS:DTSID="{035045D5-165E-4D28-A3AE-18FB40F32533}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{02A078CC-C20E-4BF4-8F88-102AD1CF0E90}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{AA94060D-7152-4736-BF03-63308E0FF0D7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Origen XML"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
+              name="Origen XML"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Datos XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLData">C:\Users\Admin\Desktop\ciclo_3\base de catos 2\semana18\dataXML.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Definición de esquema XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">C:\Users\Admin\Desktop\ciclo_3\base de catos 2\semana18\data1.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifica si se usará el esquema insertado."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo se asignan los tipos de enteros XML."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record]"
+                  name="record">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">record</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[id]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[id]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[first_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[first_name]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[last_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[last_name]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[email]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[gender]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[ip_address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[ip_address]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].Columns[ip_address]"
+                      name="ip_address"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[id]"
+                      dataType="ui2"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[first_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="first_name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[last_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="last_name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="gender">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[record].ExternalColumns[ip_address]"
+                      dataType="wstr"
+                      length="255"
+                      name="ip_address">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record]"
+                  isErrorOut="true"
+                  name="Salida de error de record">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">record</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[id]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[first_name]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[first_name]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[last_name]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[last_name]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[email]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[email]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[gender]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[gender]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[ip_address]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[ip_address]"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[ip_address]"
+                      name="ip_address" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[first_name]"
+                      dataType="nText"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[last_name]"
+                      dataType="nText"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[email]"
+                      dataType="nText"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[gender]"
+                      dataType="nText"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de error de record].ExternalColumns[ip_address]"
+                      dataType="nText"
+                      name="ip_address" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Tarea Flujo de datos\Origen XML"
+          TopLeft="407.5,75.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
